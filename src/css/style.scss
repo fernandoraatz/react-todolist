@@ -1,0 +1,584 @@
+/*
+|--------------------------------------------------------------------------
+| Paths
+|--------------------------------------------------------------------------
+*/
+
+$path-image:  '../images';
+$path-font:   '../../fonts'; 
+
+/*
+|--------------------------------------------------------------------------
+| Main Container Width
+|--------------------------------------------------------------------------
+*/
+
+$main-width:  98%;
+
+/*
+|--------------------------------------------------------------------------
+| Colors
+|--------------------------------------------------------------------------
+*/
+
+$color-bg:			   #f1f1f1;
+
+$color-text:		   #555555;
+$color-title:		   #555555;
+$color-subtitle:	   #555555;
+$color-link: 		   #66afe9;
+
+$color-theme:	       #ffffff;
+
+$btn-theme: 		   #ffffff;
+$btn-primary: 		   #337ab7;
+$btn-success:		   #5cb85c;
+$btn-danger:		   #d9534f;
+
+$input-bg:			   #ffffff;
+$input-border:		   #cccccc;
+$input-focus:		   #66afe9;
+$input-color:		   #555555;
+
+$selection-bg: 	 	   #ffffff;
+$selection-color:      #555555;
+
+$color-modal: 	       #0C0F13;
+
+/*
+|--------------------------------------------------------------------------
+| Fonts
+|--------------------------------------------------------------------------
+*/
+
+$font-main : 	  'Roboto', sans-serif;
+$font-regular:     'Roboto', sans-serif;
+$font-bold: 	  'Roboto', sans-serif;
+$font-light: 	  'Roboto', sans-serif;
+
+/*
+|--------------------------------------------------------------------------
+| Media Queries
+|--------------------------------------------------------------------------
+*/
+
+$media-desk: 		    "only screen and (max-width: 1170px)";
+$media-tablet-lg: 	"only screen and (max-width: 960px)";
+$media-tablet: 		  "only screen and (max-width: 770px)";
+$media-mobile-lg: 	"only screen and (max-width: 640px)";
+$media-mobile: 		  "only screen and (max-width: 480px)";
+
+// Ex:  @media #{$media-tablet}
+
+/*
+|--------------------------------------------------------------------------
+| OpenSans Regular
+|--------------------------------------------------------------------------
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* fallback */
+
+@font-face { 
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v39/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /*
+|--------------------------------------------------------------------------
+| Base/General
+|--------------------------------------------------------------------------
+*/
+
+// background:url(#{$image-path}imagem.png);
+
+
+* { 
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+}
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+
+body{
+	background-color: $color-bg;
+	font-family: $font-main;
+	color: $color-text;
+}
+
+.container{
+  width: $main-width;
+  margin: 0 auto;
+  @extend .clearfix;
+}
+
+main{
+  margin-left: 240px;
+  padding:20px;
+}
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Tipografia
+|--------------------------------------------------------------------------
+*/
+
+p{
+  margin: 0 0 10px 0;
+}
+
+em{
+  font-family: $font-light;
+  font-style: italic;
+}
+
+hr{
+  border: solid #ddd;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 10px 0;
+  height: 0;
+}
+
+ul{
+  list-style-type: none;
+}
+
+textarea{
+  padding-top:5px;
+}
+
+h1, h2, h3, h4, h5, h6, strong, b{
+  font-family: $font-bold;
+  font-weight: bold;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Links
+|--------------------------------------------------------------------------
+*/
+
+a{
+  color: $color-link;
+  text-decoration: none;
+  outline: 0;
+  background: transparent;
+
+  &:hover   { color: lighten($color-link, 15%); }
+  &:visited { color: lighten($color-link, 5%); }
+  &:active  { color: lighten($color-link, 5%); }
+
+
+}
+
+/*
+|--------------------------------------------------------------------------
+| Imagem
+|--------------------------------------------------------------------------
+*/
+
+img {
+  border: 0;
+  height: auto;
+  max-width: 100%;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Tabela
+|--------------------------------------------------------------------------
+*/
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Botões
+|--------------------------------------------------------------------------
+*/
+
+button,
+input[type="button"],
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Seleção
+|--------------------------------------------------------------------------
+*/
+
+::selection{
+  background: $selection-bg;
+  color:$selection-color;
+}
+
+::-moz-selection{
+  background: $selection-bg;
+  color:$selection-color;
+}
+
+img::selection      { background: transparent; }
+img::-moz-selection { background: transparent; }
+
+/*
+|--------------------------------------------------------------------------
+| Grid
+|--------------------------------------------------------------------------
+*/
+
+$grid-column: 24;
+
+@for $i from 1 through $grid-column{
+
+		%grid-#{$i} {
+		width: 100% / $grid-column * $i;
+		float:left;
+		}
+
+} 
+
+/*
+|--------------------------------------------------------------------------
+| Grid Offset
+|--------------------------------------------------------------------------
+*/
+
+@for $j from 1 through $grid-column{
+		%grid-left-#{$j} {
+			margin-left: 100% / $grid-column * $j;
+		}
+}
+
+@for $l from 1 through $grid-column{
+		%grid-right-#{$l} {
+			margin-right: 100% / $grid-column * $l;
+		}
+}
+
+/*
+|--------------------------------------------------------------------------
+| Buttons
+|--------------------------------------------------------------------------
+*/
+
+.btn{
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 0.9em;
+    text-align: center;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color:#fff;
+    transition: all ease 0.4s;
+    font-family:$font-bold;
+
+}
+
+/*
+|--------------------------------------------------------------------------
+| Buttons Theme
+|--------------------------------------------------------------------------
+*/
+
+$btn-cores:(
+theme:          $btn-theme,
+primary:        $btn-primary,
+success:        $btn-success,
+danger:         $btn-danger
+);
+
+@each $index, $valor in $btn-cores{
+.btn-#{$index}{
+    background-color: $valor;
+
+    &:hover, a:focus {
+        background-color: darken($valor, 10%);
+    }
+}
+}
+
+/*
+|--------------------------------------------------------------------------
+| Classe dos botões
+|--------------------------------------------------------------------------
+*/
+
+.btn-theme{
+@extend .btn;
+@extend .btn-theme;
+}
+
+.btn-primary{
+@extend .btn;
+@extend .btn-primary;
+}
+
+.btn-success{
+@extend .btn;
+@extend .btn-success;
+}
+
+.btn-danger{
+@extend .btn;
+@extend .btn-danger;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Form Fields e Row
+|--------------------------------------------------------------------------
+*/
+
+.form-row {
+    margin: 15px 0;
+    @extend .clearfix;
+ }
+ 
+ .form-field_full   { @extend %grid-12; }
+ .form-field_large  { @extend %grid-8; }
+ .form-field_medium { @extend %grid-6; }
+ .form-field_small  { @extend %grid-4; }
+ 
+ /*
+ |--------------------------------------------------------------------------
+ | Inputs
+ |--------------------------------------------------------------------------
+ */
+ 
+ textarea, select, input{
+     width:100%;
+     height:40px;
+     padding-left: 10px;
+     background-color: $input-bg;
+     border: 1px solid $input-border;
+     transition: border linear .2s, box-shadow linear .2s;
+ 
+       &:focus{
+           border-color: $input-border;
+           outline: 0;
+           outline: thin dotted \9;
+           box-shadow: 0 0 2px $input-focus;
+       }
+ }
+ 
+ textarea{
+   min-height:150px;
+ }
+ 
+ /*
+ |--------------------------------------------------------------------------
+ | Label and Errors
+ |--------------------------------------------------------------------------
+ */
+ 
+ label{
+     display:inline-block;
+     margin-bottom: 5px;
+     font-size: 0.95em;
+ 
+     
+ }
+ 
+ .label-error{
+     color: rgb(208, 24, 24);
+     font-size: 0.9em;
+     margin-bottom: 15px;
+ }
+ 
+ .label-tip{
+     display:inline-block;
+     margin-bottom: 5px;
+ }
+ 
+ 
+ /*
+ |--------------------------------------------------------------------------
+ | Placeholder
+ |--------------------------------------------------------------------------
+ */
+ 
+ 
+ input[type="text"]::-webkit-input-placeholder {
+     -webkit-transition: opacity 0.6s linear;
+     color: $input-color;
+ }
+ 
+ input[type="text"]:focus::-webkit-input-placeholder {
+     opacity: 0
+ }
+ 
+ textarea::-webkit-input-placeholder {
+     -webkit-transition: opacity 0.6s linear;
+     color: $input-color;
+ }
+ 
+ textarea:focus::-webkit-input-placeholder {
+     opacity: 0
+ }
+ 
+ /*
+|--------------------------------------------------------------------------
+| States
+|--------------------------------------------------------------------------
+*/
+
+%is-visible  {opacity:1; }
+%is-hidden   {opacity: 0;}
+%is-removed  {display:none;}
+%is-active   {color:$color-link;}
+
+
+/*
+|--------------------------------------------------------------------------
+| Clearfix
+|--------------------------------------------------------------------------
+*/
+
+.clearfix{
+    &:after {
+    content:".";
+    display:block;
+    clear:both;
+    visibility:hidden;
+    height:0;
+    overflow:hidden;
+  }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Image Replacement
+|--------------------------------------------------------------------------
+*/
+
+%image-replacement{
+  text-indent: -9999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Margin Auto
+|--------------------------------------------------------------------------
+*/
+
+%margin-auto{
+     margin-left: auto;
+     margin-right: auto;
+}
+
+%margin-absolute-auto{
+     margin-left: auto;
+     margin-right: auto;
+     left:0;
+     right:0;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Pseudo Elements
+|--------------------------------------------------------------------------
+*/
+
+%pseudo{
+    content:"";
+    display: block;
+    position: absolute;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Responsive video embed
+|--------------------------------------------------------------------------
+*/
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+
+        iframe {
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        }
+
+}
+
+/*
+|--------------------------------------------------------------------------
+| Truncate Element
+|--------------------------------------------------------------------------
+*/
+
+@mixin truncate($truncation-width) {
+    max-width: $truncation-width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| PX to EM
+|--------------------------------------------------------------------------
+*/
+
+// Exemplo de Uso: font-size: em(72);
+
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}

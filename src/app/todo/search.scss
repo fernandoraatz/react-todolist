@@ -1,0 +1,31 @@
+/*
+|--------------------------------------------------------------------------
+| Search
+|--------------------------------------------------------------------------
+*/
+
+.search-box{
+  margin-bottom:20px;
+
+    .container{
+      width:100%;
+    }
+  
+      .search{
+            float: left;
+             margin-right: 10px;
+             cursor: pointer;
+      }
+  
+      .form-field_medium{
+        height:28px;
+      }
+  }
+  
+  .search-fade-enter, .search-fade-leave-active {
+    opacity: 0
+  }
+  
+  .search-fade-enter-active, .search-fade-leave-active {
+    transition: opacity .4s
+  }
