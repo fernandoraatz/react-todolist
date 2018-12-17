@@ -7,8 +7,8 @@
 // Import
 
 import React, { Component } from 'react'
-import  './card.scss'; 
-import Button from '../shared/button'
+import  './todo/todo.scss'; 
+import Button from '../components/button/button'
 import { Link } from 'react-router-dom';
 
 
@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 export default class TodoList extends Component {
 
     constructor(props){
-        super(props)
+        super(props) 
     }
 
     renderCards(){

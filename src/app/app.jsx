@@ -10,7 +10,7 @@ var $ = document.querySelector.bind(document);
 
 // Import css/js 
 
-import  '../../css/style.scss';
+import  '../assets/css/style.scss';
 
 // Imports React and Routes
  
@@ -19,10 +19,10 @@ import { BrowserRouter as Router, Route, BrowserHistory} from 'react-router-dom'
 
 // Imports Componentes
 
-import Header from '../shared/header'
-import Menu from '../shared/sidebar'
-import Todo from '../todo/todo'
-import Form from '../form/form'
+import Header from './components/header/header'
+import Menu from './components/sidebar/sidebar'
+import Todo from './todolist/todo/todo' 
+import Form from './todolist/form/form' 
 
 // Main component
 

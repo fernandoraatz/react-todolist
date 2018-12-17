@@ -7,9 +7,10 @@
 // Import
 
 import React, { Component } from 'react' 
-import {Database} from '../services/dao';
-import Task from '../models/task.js';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import TodoService from '../../services/todo.service';
+import Todo from '../../models/todo.model.js';
+
 
 // Todo Component
 
@@ -19,11 +20,11 @@ class Form extends Component {
         super(props)
 
         this.state = {
-            newTask: new Task(),
+            newTask: new Todo(),
             id:this.props.match.params.id
         }
 
-        this.database = new Database()
+        this.todoService = new TodoService()
         this.save = this.save.bind(this)
 
         if(this.state.id){
@@ -37,15 +38,15 @@ class Form extends Component {
 
         const title = this.refs.title.value;
         const description = this.refs.description.value;
-        const newTask = new Task(title, description) 
+        const newTask = new Todo(title, description) 
 
         if(this.state.id){
-            this.database.update(newTask).then(() => {
+            this.todoService.update(newTask).then(() => {
                 // alert('Editado com sucesso')
             })
 
         }else{
-            this.database.insert(newTask).then(() => {
+            this.todoService.insert(newTask).then(() => {
                 // alert('Adicionado com sucesso')
             })
         }
@@ -56,7 +57,7 @@ class Form extends Component {
     }
 
     getData(id) {
-        this.database.find(id).then( item => { 
+        this.todoService.find(id).then( item => { 
                 this.refs.title.value = item.title
                 this.refs.description.value = item.description
         });

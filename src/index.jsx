@@ -11,7 +11,7 @@ import ReactDOM from 'react-dom'
 
 // Import main app
 
-import App from './app/main/app'
+import App from './app/app'
 
 // Render App 
 
