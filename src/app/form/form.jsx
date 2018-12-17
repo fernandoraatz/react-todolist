@@ -41,12 +41,12 @@ class Form extends Component {
 
         if(this.state.id){
             this.database.update(newTask).then(() => {
-                alert('Editado com sucesso')
+                // alert('Editado com sucesso')
             })
 
         }else{
             this.database.insert(newTask).then(() => {
-                alert('Adicionado com sucesso')
+                // alert('Adicionado com sucesso')
             })
         }
 
