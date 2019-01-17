@@ -7,7 +7,7 @@
 // Import
 
 import React, { Component } from 'react'
-import  './todo/todo.scss'; 
+import  './list/list.scss'; 
 import Button from '../components/button/button'
 import { Link } from 'react-router-dom';
 

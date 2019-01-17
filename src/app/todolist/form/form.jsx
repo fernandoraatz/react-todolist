@@ -8,8 +8,8 @@
 
 import React, { Component } from 'react' 
 import { withRouter } from 'react-router-dom';
-import TodoService from '../../services/todo.service';
-import Todo from '../../models/todo.model.js';
+import {TodoService} from '../../services/todo';
+import Task from '../../models/todo.js';
 
 
 // Todo Component
@@ -20,7 +20,7 @@ class Form extends Component {
         super(props)
 
         this.state = {
-            newTask: new Todo(),
+            newTask: new Task(),
             id:this.props.match.params.id
         }
 
@@ -38,7 +38,7 @@ class Form extends Component {
 
         const title = this.refs.title.value;
         const description = this.refs.description.value;
-        const newTask = new Todo(title, description) 
+        const newTask = new Task(title, description) 
 
         if(this.state.id){
             this.todoService.update(newTask).then(() => {
@@ -78,7 +78,7 @@ class Form extends Component {
                 </div>
                 <form onSubmit={this.save}>
                     <div className="form-row">
-                        <label htmlFor="">Title</label>
+                        <label htmlFor="">Title</label> 
                         <input  type="text" ref="title" placeholder="Title" autoComplete="off" name="title"/>
                         <span className="label-error"></span>
                     </div>

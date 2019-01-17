@@ -7,16 +7,16 @@
 // Import
 
 import React, { Component } from 'react'
-import  {Database} from '../../services/todo.service';
+import  {TodoService} from '../../services/todo';
  
 
 // Import Components
 
-import PageHeader from '../../components/pageheader/pageHeader'
-import TodoList from '../todoList'
+import PageHeader from '../../components/pageheader/pageheader'
+import TodoList from '../todolist'
 import TodoSearch from '../../components/search/search'
 
-
+ 
 // Todo Component
 
 export default class Todo extends Component {
@@ -24,7 +24,7 @@ export default class Todo extends Component {
     constructor(props){
         super(props)
 
-        this.database = new Database()
+        this.database = new TodoService()
         this.state = { itens: [], searchdata: ''}
 
         this.startDatabase()
