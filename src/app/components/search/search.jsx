@@ -23,7 +23,6 @@ export default class TodoSearch extends Component {
             <div className="search-box">
                     <div className="container">
                     
-                        <span className="search" ><i className="material-icons">search</i></span>
                         <input onChange={this.props.searchEngine} type="search" className="form-field_medium"  placeholder="Pesquisar Tarefas" />
                     </div>
             </div>   

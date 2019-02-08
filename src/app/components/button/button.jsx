@@ -7,6 +7,7 @@
 // Import
 
 import React, { Component } from 'react'
+import  './button.scss'; 
 
 // Button Component
  

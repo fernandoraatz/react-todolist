@@ -10,8 +10,9 @@ var $ = document.querySelector.bind(document);
 
 // Import css/js 
 
-import  '../assets/css/style.scss';
-
+import  '../assets/sass/style.scss';
+import  './app.scss';
+ 
 // Imports React and Routes
  
 import React from 'react'
@@ -21,7 +22,7 @@ import { BrowserRouter as Router, Route, BrowserHistory} from 'react-router-dom'
 
 import Header from './components/header/header'
 import Menu from './components/sidebar/sidebar'
-import Todo from './todolist/todo/todo' 
+import List from './todolist/list/list' 
 import Form from './todolist/form/form' 
 
 // Main component
@@ -32,9 +33,11 @@ export default props => (
         <div>
             <Header/>
             <Menu/>  
-            <Route exact path='/' component={Todo} />
-            <Route exact path='/add' component={Form} />
-            <Route exact path='/add/:id' component={Form} />
+            <main className="content-sidebar">
+                <Route exact path='/' component={List} />
+                <Route exact path='/add' component={Form} />
+                <Route exact path='/add/:id' component={Form} />
+            </main>
         </div>
     </Router>
       

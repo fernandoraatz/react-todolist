@@ -8,13 +8,14 @@
 
 import React from 'react' 
 import  './header.scss';
+import { Link } from 'react-router-dom';
 
 // Header Component
 
 export default props => (
     <header>
-    <div className="container">
-      <span className="header-title">React - Todo List</span>
-    </div>
+      <Link to="/"> 
+        <h1 className="header-title">React - Todolist</h1>
+      </Link>
   </header>
 )

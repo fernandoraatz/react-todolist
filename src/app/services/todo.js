@@ -7,7 +7,7 @@
 let request;
 let db;
 
-export class Database{
+export class TodoService{
 
     constructor(){
         this.name = 'toDo',

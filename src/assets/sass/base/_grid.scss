@@ -1,15 +1,15 @@
 /*
 |--------------------------------------------------------------------------
-| Search
+| Grid
 |--------------------------------------------------------------------------
 */
 
-.search-box{
-  margin-bottom:20px;
+$grid-column: 12;
 
-    .container{
-      width:100%;
-    }
-  
-}
-
+@for $i from 1 through $grid-column{
+	.grid-#{$i} {
+		width: 100% / $grid-column * $i;
+		float:left;
+	}
+} 
+ 

@@ -1,15 +1,16 @@
 /*
 |--------------------------------------------------------------------------
-| Search
+| Clearfix
 |--------------------------------------------------------------------------
 */
 
-.search-box{
-  margin-bottom:20px;
-
-    .container{
-      width:100%;
-    }
-  
+.clearfix{
+    &:after {
+    content:".";
+    display:block;
+    clear:both;
+    visibility:hidden;
+    height:0;
+    overflow:hidden;
+  }
 }
-
