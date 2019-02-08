@@ -50,7 +50,7 @@ export default class TodoList extends Component {
     render() {
     
         return ( 
-            <div className="todolist-box">
+            <div className="list-box">
                 {this.renderCards()}
             </div>    
         )
