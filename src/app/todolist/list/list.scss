@@ -1,56 +1,43 @@
-
-/*
-|--------------------------------------------------------------------------
-| List
-|--------------------------------------------------------------------------
-*/
-
-.list-box{
-    display:flex;
-    flex-wrap: wrap;
-    
-    article{
-      min-height: 165px;
-      margin-bottom:20px;
-      margin-right: 16px;
-    }
-  }
-  
-
 /*
 |--------------------------------------------------------------------------
 | Card
 |--------------------------------------------------------------------------
 */
 
-.card{
+.card-item{
     background-color: #4594b1;
     color: white;
     width:300px;
     min-height: 145px;
-    padding:16px;  
+    float: left;
+    margin-right:2%;
+    padding:16px;
     position: relative;
-
-
-    &.done{
-      background-color: #4c8e4c;
-    }
-
-    .card-title{
-        font-size: 0.8em;
-        margin-bottom: 20px;
-    }
-    
-    .card-content{
-        font-size: 0.95em;
-    }
-    
-    .card-actions{ 
-        position: absolute;
-        top: 16px;
-        right: 16px;
-    }
-
+    margin-bottom: 2%;
 }
 
+.card-title{
+    font-size: 0.8em;
+    margin-bottom: 20px;
+}
 
+.card-description{
+    font-size: 0.95em;
+}
+
+.card-options{ 
+    position: absolute;
+    top: 16px;
+    right: 16px;
+
+    button{
+        background: 0 0;
+        color:#fff;
+        border: none;
+        padding: 0 5px;
+        transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1),color .2s cubic-bezier(.4,0,.2,1);
+        outline: none;
+        cursor: pointer;
+ 
+    }
+}

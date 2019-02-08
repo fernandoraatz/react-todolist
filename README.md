@@ -1,6 +1,6 @@
-# Todolist
+# Pokedex
 
-Projeto Todolist criado em React.
+Projeto Pokedex criado em React.
 
 ## Iniciando Projeto
 
